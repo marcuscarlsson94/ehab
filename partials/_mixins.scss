@@ -23,7 +23,13 @@
   }
 }
 @mixin desktop-large() {
-   @media only screen and (max-width : 1140px){
+   @media only screen and (max-width : 1440px){
+    @content;
+  }
+}
+
+@mixin breakpoint-i-col() {
+   @media only screen and (max-width : 1098px){
     @content;
   }
 }
