@@ -1,0 +1,315 @@
+/*--- Base css layout --*/
+@import "partials/variables";
+@import "partials/mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: auto;
+  background-color: #f5f6f7;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 300;
+  font-size: $body-font-size;
+  color: $body-text-color;
+  height: 100%;
+  max-width: 1920px;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  list-style: none;
+  color: $body-text-color;
+}
+
+h3 {
+  font-size: 40px;
+  font-family: $h3-font;
+  margin: 0;
+}
+
+h4 {
+  font-size: 25px;
+  font-family: $h3-font;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: 150%
+}
+
+hr {
+  border: 1px solid #ececec;
+}
+
+
+/*====
+Header
+======*/
+
+header {
+  position: relative;
+  background-color: white;
+  height: 80px;
+  width: 100%;
+  // box-shadow: 0px 0px 8px rgba(0,0,0, .15);
+  border-bottom: 1px solid #ececec;
+  z-index: 20;
+
+  a {
+    padding: 0px 30px;
+  }
+}
+
+.header {
+  height: 100%;
+  position: relative;
+}
+
+.nav {
+  list-style: none;
+  display: inline-flex;
+
+  a {
+    position: relative;
+
+  &:hover:after {
+      transform: scale(1);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -29px;
+      left: 5px;
+      background-color: $blue;
+      height: 4px;
+      width: calc(100% - 16px);
+      transform-origin: left;
+      transform: scale(0);
+      transition: .5s ease all;
+
+    }
+  }
+}
+
+/*====
+REUSABLE
+======*/
+
+.container {
+  width: $container;
+  overflow: hidden;
+  margin: auto;
+  padding: 0;
+
+  &-xs {
+    width: $container-min;
+  }
+}
+
+.padding-large {
+  padding: 70px;
+}
+
+.padding-medium {
+  padding: 30px;
+}
+
+.margin-reset {
+  margin: 0;
+}
+
+.margin-small {
+  margin: 20px 0;
+}
+
+.margin-bottom-small {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-big {
+  margin-bottom: 40px;
+}
+
+.margin-top-large {
+  margin-top: 40px;
+}
+
+.margin-right-box {
+  margin-right: 20px;
+}
+
+.icon-large {
+  font-size: 40px;
+  background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
+  -webkit-background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*====
+FIXED SECTION
+======*/
+
+.content-wrapper {
+  position: relative;
+  height:100%;
+  width: 100%;
+  background-color: white;
+}
+
+.content-right-wrapper {
+  width: 50vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.fixed-info-section-wrapper {
+  height: 100vh;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-image: url(../ehab/img/hero.jpg);
+  width: 50vw;
+  max-width: 50vw;
+  z-index: 15;
+  overflow-y: auto;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 4px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
+    width: 50vw;
+    max-width: 50vw;
+  }
+}
+
+.fixed-content-wrapper {
+  position: relative;
+  z-index: 99;
+  height: 100%;
+  width: 100%;
+}
+
+.fixed-content {
+  padding: 70px;
+
+  h3 {
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  p {
+    color: white;
+  }
+}
+
+
+
+.d-b {
+  display: block;
+}
+
+
+/*====
+RIGHT CONTENT
+======*/
+
+.faded-intro-text {
+  color: lighten($body-text-color, 60);
+  font-size: 20px;
+}
+
+.intro-text {
+  border-bottom: 1px solid #ececec;
+}
+
+.box {
+  width: calc(480px);
+  border: 1px solid #ececec;
+}
+
+/*====
+FLEX COMPONENTS
+======*/
+
+
+/*====
+FLEX COMPONENTS
+======*/
+
+.f-col-md-8 {
+  flex: 1 0 0;
+  padding-right: 15px;
+}
+
+.f-col-md-4 {
+  flex: 2 0 0;
+}
+
+.f {
+  display: flex;
+  @include tablet {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  @include mobile {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.f-c-c {
+  align-items: center;
+  justify-content: center;
+}
+
+.f-c-b {
+  justify-content: center;
+}
+
+.f-c-h {
+  align-items: center;
+}
+
+.f-d-c {
+  flex-direction: column;
+}
+
+.flex-stretch {
+  justify-content: space-between;
+}
+
+.f-col {
+  flex-direction: column;
+}
+
+.f-col-half {
+  // flex-basis: 50%;
+}
+
+.f-col-full {
+  flex-basis: 100%;
+}
