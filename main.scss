@@ -77,6 +77,13 @@ header {
   list-style: none;
   display: inline-flex;
 
+  @include tablet {
+    display: block;
+  }
+  @include mobile {
+    display: block;
+  }
+
   a {
     position: relative;
 
@@ -108,6 +115,13 @@ REUSABLE
   overflow: hidden;
   margin: auto;
   padding: 0;
+
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    width: 100%;
+  }
 
   &-xs {
     width: $container-min;
@@ -169,6 +183,19 @@ FIXED SECTION
   width: 50vw;
   height: 100vh;
   overflow-y: scroll;
+
+  @include tablet {
+    width: 100vw;
+    height: 100%;
+    overflow-y: none;
+  }
+
+  @include mobile {
+    width: 100vw;
+    height: 100%;
+    overflow-y: none;
+  }
+
 }
 
 .fixed-info-section-wrapper {
@@ -183,11 +210,11 @@ FIXED SECTION
   overflow-y: auto;
 
   @include tablet {
-    display: none;
+    display: none !important;
   }
 
   @include mobile {
-    display: none;
+    display: none !important;
   }
 
   &:after {
@@ -200,6 +227,14 @@ FIXED SECTION
     background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
     width: 50vw;
     max-width: 50vw;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -208,6 +243,14 @@ FIXED SECTION
   z-index: 99;
   height: 100%;
   width: 100%;
+
+  @include tablet {
+    display: none !important;
+  }
+
+  @include mobile {
+    display: none !important;
+  }
 }
 
 .fixed-content {
@@ -246,6 +289,14 @@ RIGHT CONTENT
 .box {
   width: calc(480px);
   border: 1px solid #ececec;
+
+  @include tablet {
+    width: 100%;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 /*====
@@ -269,12 +320,10 @@ FLEX COMPONENTS
 .f {
   display: flex;
   @include tablet {
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: block;
   }
   @include mobile {
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: block;
   }
 }
 .flex-wrap {
