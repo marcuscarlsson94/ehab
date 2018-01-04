@@ -289,6 +289,11 @@ RIGHT CONTENT
 .box {
   width: calc(50%);
   border: 1px solid #ececec;
+  transition: .5s ease all;
+
+  &:hover {
+    background-color: #f5f6f7;
+  }
 
   @include desktop-large {
     width: 50%;
