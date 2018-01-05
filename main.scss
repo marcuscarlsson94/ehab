@@ -303,6 +303,7 @@ REUSABLE
 .contact-bar-icon {
   font-size: 40px;
   color: white;
+  transition: .4s ease all;
   // background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
   // -webkit-background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
   // -webkit-background-clip: text;
@@ -353,14 +354,39 @@ FIXED SECTION
   transform: rotate(6deg);
 }
 
+.contact_bar:hover {
+  background-color: rgba(0,0,0,.85);
+}
+
 .contact_bar {
   background-color: rgba(0,0,0,.9);
   padding: 70px;
   display: block;
+  transition: .4s ease all;
 
   h4 {
     color: white;
     display: inline-flex;
+  }
+}
+
+.service_line {
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: -20px;
+    width: 70px;
+    height: 2px;
+    background-color: #000;
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -523,7 +549,7 @@ RIGHT CONTENT
 }
 
 .intro-text {
-  border-bottom: 1px solid #ececec;
+
 }
 
 .box {
