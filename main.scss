@@ -49,6 +49,7 @@ a {
 h3 {
   font-size: 40px;
   font-family: $h3-font;
+  color: rgba(0,0,0,.75);
   margin: 0;
   @include tablet {
     font-family: $h3-font /1.2;
@@ -73,15 +74,33 @@ hr {
   border: 1px solid #ececec;
 }
 
+div {
+  position: relative;
+}
+
 figure {
   margin:0;
 }
 
 .office {
+  position: relative;
   max-width: 100%;
   background-size: 100%;
   background-image: url('./img/borgholmskontoret.jpg');
   overflow: hidden;
+
+  &__bar {
+    content: "";
+    position: absolute;
+    bottom: -44px;
+    left: -47px;
+    width: 400px;
+    height: 120px;
+    color: white;
+    padding: 40px;
+    background-color: rgba(0,0,0,.9);
+
+  }
 
   img {
     width: 100%;
@@ -224,6 +243,10 @@ REUSABLE
   margin: 0;
 }
 
+.margin-large {
+  margin: 70px;
+}
+
 .margin-small {
   margin: 20px 0;
 }
@@ -247,6 +270,15 @@ REUSABLE
 .icon-large {
   font-size: 40px;
   color: $blue;
+  // background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
+  // -webkit-background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
+  // -webkit-background-clip: text;
+  // -webkit-text-fill-color: transparent;
+}
+
+.contact-bar-icon {
+  font-size: 40px;
+  color: white;
   // background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
   // -webkit-background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
   // -webkit-background-clip: text;
@@ -293,6 +325,21 @@ FIXED SECTION
 
 }
 
+.contact_bar:hover .contact-bar-icon {
+  transform: rotate(6deg);
+}
+
+.contact_bar {
+  background-color: rgba(0,0,0,.9);
+  padding: 70px;
+  display: block;
+
+  h4 {
+    color: white;
+    display: inline-flex;
+  }
+}
+
 .personal-section-wrapper {
   height: 100vh;
   position: relative;
@@ -322,8 +369,13 @@ FIXED SECTION
   width: 100%;
   overflow: hidden;
 
+  &:hover img {
+    transform: scale(.95);
+  }
+
   img {
     width: 100%;
+    transition: .4s ease all;
   }
 
   &:hover:after {
