@@ -1,6 +1,7 @@
 /*--- Base css layout --*/
 @import "partials/variables";
 @import "partials/mixins";
+@import "partials/animations";
 
 * {
   box-sizing: border-box;
@@ -10,8 +11,8 @@ body {
   padding: 0;
   margin: auto;
   background-color: #f5f6f7;
-  font-family: 'Roboto Slab', sans-serif;
-  font-weight: 300;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   font-size: $body-font-size;
   color: $body-text-color;
   height: 100%;
@@ -33,24 +34,14 @@ a {
   &:after {
     content: "";
     position: absolute;
-    bottom: -28px;
+    bottom: -25px;
     left: 5px;
     background-color: $blue;
-    height: 4px;
+    height: 2px;
     width: calc(100% - 16px);
-    transform-origin: left;
+    transform-origin: center;
     transform: scale(0);
-    -webkit-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1); /* older webkit */
-    -webkit-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -moz-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -o-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290); /* custom */
-
-    -webkit-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1); /* older webkit */
-    -webkit-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -moz-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -o-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290); /* custom */
+    transition: .4s ease all;
 
   }
 }
@@ -139,32 +130,35 @@ header {
   }
 
   a {
-    position: relative;
-    background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(255,248,108,0)),to(rgba(255,248,108,0)));
-    background-image: linear-gradient(rgba(255,248,108,0),rgba(255,248,108,0));
-    background-repeat: repeat-y;
-    background-size: 0 0;
-    background-position: 0 100%;
-    // -webkit-transition: easeOutBounce .5s;
-    // transition: easeOutBounce .5s;
-    -webkit-transition-property: opacity,background-image,padding;
-    transition-property: opacity,background-image,padding;
-    -webkit-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1); /* older webkit */
-    -webkit-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -moz-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -o-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290); /* custom */
-
-    -webkit-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1); /* older webkit */
-    -webkit-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -moz-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    -o-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
-    transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290); /* custom */
+    font-family: $h3-font;
+    font-weight: 500;
+    // position: relative;
+    // background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(255,248,108,0)),to(rgba(255,248,108,0)));
+    // background-image: linear-gradient(rgba(255,248,108,0),rgba(255,248,108,0));
+    // background-repeat: repeat-y;
+    // background-size: 0 0;
+    // background-position: 0 100%;
+    // // -webkit-transition: easeOutBounce .5s;
+    // // transition: easeOutBounce .5s;
+    // -webkit-transition-property: opacity,background-image,padding;
+    // transition-property: opacity,background-image,padding;
+    // -webkit-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1); /* older webkit */
+    // -webkit-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
+    // -moz-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
+    // -o-transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290);
+    // transition: all 500ms cubic-bezier(0.840, 0.100, 0.285, 1.290); /* custom */
+    //
+    // -webkit-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1); /* older webkit */
+    // -webkit-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
+    // -moz-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
+    // -o-transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290);
+    // transition-timing-function: cubic-bezier(0.840, 0.100, 0.285, 1.290); /* custom */
 
     &:hover {
-      background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(64, 84, 178,.55)),to(rgba(64, 84, 178,.55)));
-      background-image: linear-gradient(rgba(64, 84, 178,.55),rgba(64, 84, 178,.55));
-      background-size: 100% .45em;
+      color: $blue;
+      // background-image: -webkit-gradient(linear,left top,left bottom,from(rgba(64, 84, 178,.55)),to(rgba(64, 84, 178,.55)));
+      // background-image: linear-gradient(rgba(64, 84, 178,.55),rgba(64, 84, 178,.55));
+      // background-size: 100% .45em;
     }
 
     // &:hover:after {
@@ -314,26 +308,6 @@ FIXED SECTION
   @include mobile {
     display: none !important;
   }
-
-  // &:after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   height: 100%;
-  //   width: 100%;
-  //   background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
-  //   width: 50vw;
-  //   max-width: 50vw;
-  //
-  //   @include tablet {
-  //     display: none;
-  //   }
-  //
-  //   @include mobile {
-  //     display: none;
-  //   }
-  // }
 }
 
 .fixed {
@@ -346,6 +320,7 @@ FIXED SECTION
   background-size: cover;
   flex: 1;
   width: 100%;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -353,6 +328,18 @@ FIXED SECTION
 
   &:hover:after {
     opacity: 0;
+  }
+
+  &:hover .info-card {
+    transform: translateY(0);
+    transition-delay: .4s;
+    opacity: 1;
+  }
+
+  &:hover .info-card-2 {
+    transform: translateY(10px);
+    transition-delay: .2s;
+    opacity: 1;
   }
 
   &:after {
@@ -363,10 +350,58 @@ FIXED SECTION
     height: 100%;
     width: 100%;
     opacity: 1;
-    background: linear-gradient(rgba(65, 84, 178,.96), rgba(44, 164, 252,.95));
+    background: linear-gradient(rgba(65, 84, 178,.86), rgba(44, 164, 252,.85));
     transition: .4s ease all;
   }
 }
+
+.info-card {
+  width: 100%;
+  height: 40%;
+  background-color: rgba(0,0,0,.85);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(335px);
+  -webkit-transition: all 400ms cubic-bezier(.22,.68,0,1.21); /* older webkit */
+  -webkit-transition: all 400ms cubic-bezier(.22,.68,0,1.21);
+  -moz-transition: all 400ms cubic-bezier(.22,.68,0,1.21);
+  -o-transition: all 400ms cubic-bezier(.22,.68,0,1.21);
+  transition: all 400ms cubic-bezier(.22,.68,0,1.21); /* custom */
+
+  &-2 {
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0,0,0,.65);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 97;
+    opacity: 0;
+    transform: translateY(335px);
+    -webkit-transition: all 400ms cubic-bezier(.22,.68,0,1.21); /* older webkit */
+    -webkit-transition: all 400ms cubic-bezier(.22,.68,0,1.21);
+    -moz-transition: all 400ms cubic-bezier(.22,.68,0,1.21);
+    -o-transition: all 400ms cubic-bezier(.22,.68,0,1.21);
+    transition: all 400ms cubic-bezier(.22,.68,0,1.21); /* custom */
+  }
+
+  h4 {
+    font-size: $h4-font-size;
+    font-weight: normal;
+    color: #fff;
+    padding: 20px 30px 0px 30px;
+  }
+  p {
+    font-size: $h4-font-size / 1.45;
+    color: #fff;
+    padding: 0px 30px 0px 30px;
+  }
+}
+
+
 // .fixed-content-wrapper {
 //   position: relative;
 //   z-index: 99;
