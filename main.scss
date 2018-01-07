@@ -34,11 +34,11 @@ a {
   &:after {
     content: "";
     position: absolute;
-    bottom: -25px;
-    left: 5px;
+    bottom: -5px;
+    left: 0px;
     background-color: $blue;
     height: 2px;
-    width: calc(100% - 16px);
+    width: calc(100%);
     transform-origin: center;
     transform: scale(0);
     transition: .4s ease all;
@@ -48,8 +48,9 @@ a {
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 44px;
   font-family: $h3-font;
+  font-weight: 800;
   color: rgba(0,0,0,.75);
   margin: 0;
   @include tablet {
@@ -332,7 +333,7 @@ FIXED SECTION
 
 .content-left-wrapper {
   position: relative;
-  width: 66%;
+  width: 75%;
   height: 100vh;
   overflow-y: scroll;
 
@@ -376,11 +377,11 @@ FIXED SECTION
     content: '';
     display: block;
     position: absolute;
-    top: 40px;
+    top: 39px;
     left: -20px;
     width: 70px;
-    height: 2px;
-    background-color: #000;
+    height: 3px;
+    background-color: $blue;
     visibility: visible;
     opacity: 1;
     -webkit-transition: all 0.2s ease-in-out;
@@ -394,7 +395,7 @@ FIXED SECTION
   height: 100vh;
   position: relative;
   width: 100%;
-  max-width: 33vw;
+  max-width: 25vw;
   z-index: 15;
   overflow: hidden;
 
@@ -415,7 +416,6 @@ FIXED SECTION
   position: relative;
   background-position: center;
   background-size: cover;
-  flex: 1;
   width: 100%;
   overflow: hidden;
 
@@ -491,7 +491,7 @@ FIXED SECTION
   }
 
   h4 {
-    font-size: $h4-font-size;
+    font-size: $h4-font-size - 5px;
     font-weight: normal;
     color: #fff;
     padding: 20px 30px 0px 30px;
@@ -500,6 +500,26 @@ FIXED SECTION
     font-size: $h4-font-size / 1.45;
     color: #fff;
     padding: 0px 30px 0px 30px;
+  }
+}
+
+.contact-puff {
+  padding: 70px;
+  background-color: black;
+  width: 100%;
+
+  h4, p {
+    color: white;
+  }
+
+  @include desktop-large {
+    padding: 20px;
+  }
+  @include tablet {
+    padding: 20px;
+  }
+  @include mobile {
+    padding: 20px;
   }
 }
 
@@ -585,6 +605,10 @@ FOOTER
 .footer-wrapper {
   background-color: #010101;
   color: white;
+
+  a {
+    color: white;
+  }
 }
 
 /*====
@@ -663,6 +687,18 @@ FLEX COMPONENTS
 
 .f-col-4 {
   flex: 1;
+
+  @include desktop-large {
+    flex-basis: 50%;
+  }
+
+  @include tablet {
+    flex-basis: 50%;
+  }
+
+  @include mobile {
+    display: block;
+  }
 }
 
 .f-col-full {
